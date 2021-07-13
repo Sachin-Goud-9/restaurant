@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Restaurant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  </head>
+  <body>  	
+<div id="row">
+  	<div id="tables" >
+  		<h1 style="text-align:center">Tables</h1>
+  		<input type="text" id="tablesearch" onkeyup="tableSearch()" placeholder="Enter table name to search">
+  		<ul id="myul">
+  	<li class="table" id="table1" ondragover="allowDrop(event)" onclick="display(event)" ondrop="drop(event)">
+  		<h4>Table-1</h4>
+  		Total Items: <span id="total1">0</span>
+  		<br>
+  		<br>
+  		Total Bill: <span id="bill1">0</span>
+  	</li>
+<li class="table" id="table2" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="display(event)">
+  		<h4>Table-2</h4>
+  		Total Items: <span id="total2">0</span>
+  		<br>
+  		<br>
+  		Total Bill: <span id="bill2">0</span>
+  	</li>
+
+ <li class="table" id="table3" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="display(event)"> 
+  		<h4>Table-3</h4>
+  		Total Items: <span id="total3">0</span>
+  		<br>
+  		<br>
+  		Total Bill: <span id="bill3">0</span>
+  	</li>
+  </ul>
+
+  	</div>
+  	<div class="straightLine">
+  	</div>
+<div id="column2">
+	<h1 style="text-align:center">Menu</h1>
+	<input type="text" id="itemsearch" onkeyup="itemSearch()" placeholder="Enter item name to search">
+  	<ul id="itemlist">
+<li class="item" id="item1" draggable="true" ondragstart="drag(event)">
+	<h2>
+		French Fries
+	</h2>
+
+	Price: 120 
+
+</li>
+
+<li class="item" id="item2" draggable="true" ondragstart="drag(event)">
+	<h2>
+		Biryani
+	</h2>
+
+	Price: 180 
+
+</li>
+<li class="item" id="item3" draggable="true" ondragstart="drag(event)">
+	<h2>
+		Pizza
+
+	</h2>
+
+	Price: 200
+
+</li>
+<li class="item" id="item4" draggable="true" ondragstart="drag(event)">
+	<h2>
+		Burger
+	</h2>
+
+	Price: 110 
+
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="myModal" class="modal">
+
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2></h2>
+    </div>
+    <div class="modal-body">
+    	<table style="text-align: left">
+    	<col width='70'>
+		  <col width='250'>
+		  <col width='70'>
+		  <col width='170'>
+
+		  <tr>
+    		<th>S.No.</th>
+    		<th>Item</th>
+    		<th>Price</th>
+    		<th>Quantity</th>
+    	</tr>
+    	</table>
+     	<table style="width:100%">
+		  <col width='50'>
+		  <col width='230'>
+		  <col width='50'>
+		  <col width='148'>
+		  <col width='40'>
+		  <tr style='display: none' id="clone">
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		    <td><input type='number' min='1' style='width: 150px' value="" placeholder='Number of servings'></td>
+		    <td><i class="fa fa-trash" aria-hidden="true" type='button' style='padding-left: 15px'></i>
+			</td>
+		  </tr>
+		</table>
+		<div style="text-align: center;"><h3 id="totalbill">Total: </h3></div>
+    </div>
+    <div class="modal-footer">
+      <span id="session" type='button' style="color:black;font-size:24px;padding-bottom:4px;">Generate Bill</span>
+    </div>
+  </div>
+
+</div>
+    <script src="script1.js"></script>
+  </body>
+</html>
